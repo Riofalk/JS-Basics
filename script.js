@@ -31,7 +31,11 @@ const lastArrayElements = (array, n) => {
 const mergedArray = (firstArray, secondArray) => {
     let mergedArray = firstArray.concat(secondArray);
     let uniqueArray = [...new Set(mergedArray)];
-    uniqueArray =  uniqueArray.reverse();
+    uniqueArray =  uniqueArray.sort((function (a, b) { return (a - b) })).reverse();
     return uniqueArray;
+}
+
+const hasKey = (object, key) => {
+    return (object.hasOwnProperty(key))
 }
 
